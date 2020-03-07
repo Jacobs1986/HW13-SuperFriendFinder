@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
 
-let routes = require('./routing/htmlRoutes')(app)
+let htmlRoutes = require('./routing/htmlRoutes')(app)
 
 // Routes
 app.get("/", function(request, result) {
