@@ -1,0 +1,23 @@
+{
+  "name": "hw13-superfriendfinder",
+  "version": "1.0.0",
+  "description": "A website to help pair the user with a Super Friend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jacobs1986/HW13-SuperFriendFinder.git"
+  },
+  "author": "Sean Jacobson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jacobs1986/HW13-SuperFriendFinder/issues"
+  },
+  "homepage": "https://github.com/Jacobs1986/HW13-SuperFriendFinder#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
