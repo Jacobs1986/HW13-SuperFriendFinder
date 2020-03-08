@@ -22,10 +22,3 @@ app.get("/", function(request, result) {
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
 });
-
-app.post("/api/friends", function(request, result) {
-    let newFriend = request.body;
-    console.log(newFriend);
-    heroArray.push(newFriend);
-    result.json(newFriend);
-})
