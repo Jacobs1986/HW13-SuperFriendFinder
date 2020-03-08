@@ -49,6 +49,25 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <script type="text/javascript">
+        // When the submit button is clicked the 
+        $("#submit").on("click", (event) => {
+            event.preventDefault()
+            console.log("Submit button clicked.")
+            let valueArray = []
+            questions.forEach(element => {
+                let value = $(`input[name='questions-${element}']:checked`).val();
+                valueArray.push(value);
+            })
+            let newInformation = {
+                name: $("#userName").val().trim(),
+                photo: $("#pictureLink").val().trim(),
+                values: valueArray
+            }
+            console.log(newInformation)
+        })
+    </script>
+
 </body>
 
 </html>
