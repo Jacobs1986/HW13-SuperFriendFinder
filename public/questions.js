@@ -21,8 +21,15 @@ for (let i = 0; i < questions.length; i++) {
 $("#submit").on("click", (event) => {
     event.preventDefault()
     console.log("Submit button clicked.")
+    let valueArray = []
     questions.forEach(element => {
         let value = $(`input[name='questions-${element}']:checked`).val();
-        console.log(`The value of ${element} is ${value}`)
+        valueArray.push(value);
     })
+    let newInformation = {
+        name: $("#userName").val().trim(),
+        photo: $("#pictureLink").val().trim(),
+        values: valueArray
+    }
+    console.log("New frind information: ", newInformation);
 })
