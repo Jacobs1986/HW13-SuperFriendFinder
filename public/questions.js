@@ -36,10 +36,30 @@ $("#submit").on("click", function(event) {
     $.get("/api/friends").then(function(data) {
         console.log(data);
         data.forEach(element => {
-            console.log(element.name);
+            totalDif = difference(newInformation.values, element.values)
+            console.log(`The difference between you and ${element.name} is ${totalDif}`)
+            if (totalDif < 3) {
+                console.log(`You both are a match!`)
+            }
+            else {
+                console.log("You are not a match.")
+            }
         })
     })
     // $.post("/api/friends", newInformation).then(function(data) {
     //     console.log("Information will be added.")
     // })
 })
+
+difference = (ary1, ary2) => {
+    let newAry = []
+    for (var i = 0; i < ary1.length; i++) {
+        newAry.push(Math.abs(ary1[i] - ary2[i]))
+    }
+    console.log(newAry);
+    let totalDifference = 0
+    for (var i=0; i < newAry.length; i++) {
+        totalDifference = totalDifference + newAry[i];
+    }
+    return totalDifference;
+}
