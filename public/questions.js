@@ -32,6 +32,13 @@ $("#submit").on("click", function(event) {
         values: valueArray
     }
     console.log(newInformation)
+    // get the information from the api
+    $.get("/api/friends").then(function(data) {
+        console.log(data);
+        data.forEach(element => {
+            console.log(element.name);
+        })
+    })
     // $.post("/api/friends", newInformation).then(function(data) {
     //     console.log("Information will be added.")
     // })

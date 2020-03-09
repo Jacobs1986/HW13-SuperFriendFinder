@@ -1,4 +1,4 @@
-function diff(ary1, ary2) {
+function difference(ary1, ary2) {
     let newAry = []
     for (var i = 0; i < ary1.length; i++) {
         newAry.push(Math.abs(ary1[i] - ary2[i]))
