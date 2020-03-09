@@ -16,3 +16,23 @@ for (let i = 0; i < questions.length; i++) {
     }
     card.append("<br>")
 }
+
+// When the submit button is clicked the 
+$("#submit").on("click", function(event) {
+    event.preventDefault()
+    console.log("Submit button clicked.")
+    let valueArray = []
+    questions.forEach(element => {
+        let value = $(`input[name='questions-${element}']:checked`).val();
+        valueArray.push(value);
+    })
+    let newInformation = {
+        name: $("#userName").val().trim(),
+        photo: $("#pictureLink").val().trim(),
+        values: valueArray
+    }
+    console.log(newInformation)
+    // $.post("/api/friends", newInformation).then(function(data) {
+    //     console.log("Information will be added.")
+    // })
+})
