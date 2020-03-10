@@ -11,13 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
 
-let htmlRoutes = require('./routing/htmlRoutes')(app)
-let apiRoutes = require('./routing/apiRoutes')(app)
-
 // Routes
-app.get("/", function(request, result) {
-    result.sendFile(path.join(`${__dirname}/public`, "home.html"));
-})
+
+require('./routing/htmlRoutes')(app)
+require('./routing/apiRoutes')(app)
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
