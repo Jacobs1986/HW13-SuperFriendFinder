@@ -35,16 +35,20 @@ $("#submit").on("click", function(event) {
     // get the information from the api
     $.get("/api/friends").then(function(data) {
         console.log(data);
-        data.forEach(element => {
-            totalDif = difference(newInformation.values, element.values)
-            console.log(`The difference between you and ${element.name} is ${totalDif}`)
+        for (let i = 0; i < data.length; i++) {
+            totalDif = difference(newInformation.values, data[i].values)
+            console.log(`The difference between you and ${data[i].name} is ${totalDif}`)
             if (totalDif < 3) {
-                console.log(`You both are a match!`)
+                $("#surveryHeader").text(`Your match is: ${data[i].name}`)
+                card.empty();
+                let picture = data[i].photo
+                card.append(`<img src=${picture}>`)
+                break
             }
             else {
                 console.log("You are not a match.")
             }
-        })
+        }
     })
     // $.post("/api/friends", newInformation).then(function(data) {
     //     console.log("Information will be added.")
