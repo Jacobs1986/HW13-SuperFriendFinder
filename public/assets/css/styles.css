@@ -16,6 +16,13 @@ font-family: 'Bangers', cursive;
     padding-left: 70px;
 }
 
+#surveryTitle {
+    font-family: 'Bangers', cursive;
+    font-size: 50px;
+    background-color: chocolate;
+    width: 100%;
+}
+
 .form-control {
     width: 50%;
 }
