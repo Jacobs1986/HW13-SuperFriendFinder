@@ -30,7 +30,9 @@ $("#submit").on("click", function(event) {
     let valueArray = []
     questions.forEach(element => {
         let value = $(`input[name='questions-${element}']:checked`).val();
-        valueArray.push(value);
+        // convert value into an integer
+        let valueInt = parseInt(value);
+        valueArray.push(valueInt);
     })
     let newInformation = {
         name: $("#userName").val().trim(),
@@ -60,14 +62,16 @@ $("#submit").on("click", function(event) {
         for (let i = 0; i < heroArray.length; i++) {
             if (leastDif === heroArray[i].difference) {
                 console.log(`You are a match for ${heroArray[i].name}`)
+                $("#modal-title").text(`You are a match for: ${heroArray[i].name}`);
+                $("#heroPicture").attr("src", `${heroArray[i].photo}`);
                 $('#myModal').modal('show');
                 break
             }
         }
     })
-//     $.post("/api/friends", newInformation).then(function(data) {
-//         console.log("Information will be added.")
-//     })
+    $.post("/api/friends", newInformation).then(function(data) {
+        console.log("Information will be added.")
+    })
 })
 
 difference = (ary1, ary2) => {
