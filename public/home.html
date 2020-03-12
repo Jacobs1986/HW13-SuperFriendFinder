@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- link to css file -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
     <title>Super Friend Finder</title>
 </head>
 
 <body>
 
     <!-- Jumbotron -->
-    <div class="container">
+    <div class="container" id="home">
         <div class="jumbotron">
             <h1 class="display-4">Super Friend Finder</h1>
             <!-- Description of website -->
@@ -25,9 +28,10 @@
             <p class="lead">
                 <a href="/survey" class="btn btn-primary btn-lg" role="button">Survey</a>
             </p>
+            <a href="/api/friends">API Friends</a>
         </div>
+        <img src="./assets/images/justiceleague.jpg" alt="Justice League" id="heroImage">
     </div>
-    <a href="/api/friends">API Friends</a>
 
     <!--Bootstrap JQUERY-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
