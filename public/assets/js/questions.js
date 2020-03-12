@@ -6,7 +6,12 @@ let questions = [
     "A friend will listen to you no matter what you are going through.",
     "A true friend will help you clean your weapons when you ask them.",
     "When you need time alone a friend will respect your choice.",
-    "You might be a loner, but a good friend knows when they are needed."
+    "You might be a loner, but a good friend knows when they are needed.",
+    "A friend shares the last bit of chocolate with you.",
+    "Icecream can help smooth over any difficulties between friends.",
+    "You should support a friend through any new endeavor.",
+    "If your friend is learning a new skill you will learn along with them.",
+    "It is always important to tell the truth, not matter how much it hurts.",
 ];
 
 let choices = ["1 Strongly Disagree", "2", "3", "4", "5 Strongly Agree"]
