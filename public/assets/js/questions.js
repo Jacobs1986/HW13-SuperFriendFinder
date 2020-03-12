@@ -41,14 +41,29 @@ $("#submit").on("click", function(event) {
     // get the information from the api
     $.get("/api/friends").then(function(data) {
         let totalArray = [];
+        heroArray = [];
         console.log(data);
         data.forEach(element => {
             totalDif = difference(newInformation.values, element.values)
             console.log(`The difference between you and ${element.name} is ${totalDif}`)
             totalArray.push(totalDif);
+            heroArray.push({
+                name: element.name,
+                difference: totalDif,
+                photo: element.photo
+            })
         })
         // find the smallest value in totalArray
-        console.log(Math.min(...totalArray));
+        let leastDif = Math.min(...totalArray);
+        console.log(`The smallest number is ${leastDif}`)
+        // Now we need to search the heroArray for the match
+        for (let i = 0; i < heroArray.length; i++) {
+            if (leastDif === heroArray[i].difference) {
+                console.log(`You are a match for ${heroArray[i].name}`)
+                $('#myModal').modal('show');
+                break
+            }
+        }
     })
 //     $.post("/api/friends", newInformation).then(function(data) {
 //         console.log("Information will be added.")
