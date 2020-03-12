@@ -1,3 +1,12 @@
 #heroImage {
     width: 100%;
 }
+
+/* Survey page */
+.container-fluid {
+    padding-left: 70px;
+}
+
+.form-control {
+    width: 50%;
+}

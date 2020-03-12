@@ -1,7 +1,13 @@
 console.log("linked");
 let card = $("#surveyQuestions")
 
-let questions = ["question1", "question2"];
+let questions = [
+    "A friend is someone that you can count on no matter what.", 
+    "A friend will listen to you no matter what you are going through.",
+    "A true friend will help you clean your weapons when you ask them.",
+    "When you need time alone a friend will respect your choice.",
+    "You might be a loner, but a good friend knows when they are needed."
+];
 
 let choices = ["1 Strongly Disagree", "2", "3", "4", "5 Strongly Agree"]
 
@@ -12,9 +18,9 @@ for (let i = 0; i < questions.length; i++) {
     let questionText = questions[i];
     card.append(`${questionText}<br>`);
     for (let j = 0; j < choices.length; j++) {
-        card.append(`<input type='radio' name=questions-${questionText} value=${j+1}>${choices[j]}<br>`)
+        card.append(`<input type='radio' name='questions-${questionText}' value='${j+1}'>${choices[j]}&nbsp&nbsp&nbsp`)
     }
-    card.append("<br>")
+    card.append("<br><br>")
 }
 
 // When the submit button is clicked the 
@@ -38,21 +44,21 @@ $("#submit").on("click", function(event) {
         for (let i = 0; i < data.length; i++) {
             totalDif = difference(newInformation.values, data[i].values)
             console.log(`The difference between you and ${data[i].name} is ${totalDif}`)
-            if (totalDif < 3) {
-                $("#surveryHeader").text(`Your match is: ${data[i].name}`)
-                card.empty();
-                let picture = data[i].photo
-                card.append(`<img src=${picture}>`)
-                break
-            }
-            else {
-                console.log("You are not a match.")
-            }
+//             if (totalDif < 3) {
+//                 $("#surveryHeader").text(`Your match is: ${data[i].name}`)
+//                 card.empty();
+//                 let picture = data[i].photo
+//                 card.append(`<img src=${picture}>`)
+//                 break
+//             }
+//             else {
+//                 console.log("You are not a match.")
+//             }
         }
     })
-    $.post("/api/friends", newInformation).then(function(data) {
-        console.log("Information will be added.")
-    })
+//     $.post("/api/friends", newInformation).then(function(data) {
+//         console.log("Information will be added.")
+//     })
 })
 
 difference = (ary1, ary2) => {
