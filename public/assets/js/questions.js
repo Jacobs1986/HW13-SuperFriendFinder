@@ -74,9 +74,9 @@ $("#submit").on("click", function(event) {
             }
         }
     })
-    $.post("/api/friends", newInformation).then(function(data) {
-        console.log("Information will be added.")
-    })
+    // $.post("/api/friends", newInformation).then(function(data) {
+    //     console.log("Information will be added.")
+    // })
 })
 
 difference = (ary1, ary2) => {
